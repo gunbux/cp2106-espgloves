@@ -1,5 +1,5 @@
 import {Reducer} from 'redux'
-import {ActionTypes, CONFIG_ACTIONS, ConfigType} from './types'
+import {ActionTypes, CONFIG_ACTIONS, ConfigTemplate, ConfigType} from './types'
 
 const initialState = {
   configList: []
@@ -14,11 +14,10 @@ export const config: Reducer<State, ActionTypes> = (state = initialState, action
     case CONFIG_ACTIONS.GET_CONFIG: {
       return {...state}
     }
-    //TODO: Add checks for adding
-    case CONFIG_ACTIONS.ADD_CONFIG: {
+    case CONFIG_ACTIONS.CREATE_CONFIG: {
       return {
         ...state,
-        configList: [...state.configList, action.response]
+        configList: [...state.configList,  ConfigTemplate]
       }
     }
 

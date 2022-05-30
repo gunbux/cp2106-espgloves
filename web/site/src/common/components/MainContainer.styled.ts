@@ -3,7 +3,7 @@ import Container from '@mui/material/Container'
 
 export const StyledContainer = styled(Container)`
   //Temporary height
-  height: calc(100vh - 68.5px);
+  min-height: calc(100vh - 68.5px);
 `
 
 export const StyledBackground = styled.div`

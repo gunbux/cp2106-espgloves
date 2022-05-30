@@ -14,6 +14,12 @@ export const addConfig = (config: ConfigType) => async (dispatch: Dispatch<Actio
   })
 }
 
+export const createConfig = () => (dispatch: Dispatch<ActionTypes>) => {
+  dispatch({
+    type: CONFIG_ACTIONS.CREATE_CONFIG
+  })
+}
+
 export const deleteConfig = (configID: string) => async (dispatch: Dispatch<ActionTypes>) => {
   dispatch({
     type: CONFIG_ACTIONS.DELETE_CONFIG,

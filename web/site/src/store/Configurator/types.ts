@@ -4,15 +4,25 @@ export type ConfigType = {
   name: string
 }
 
+export const ConfigTemplate: ConfigType = {
+  id: '',
+  name: ''
+}
+
 export enum CONFIG_ACTIONS {
   GET_CONFIG = 'CONFIG_ACTIONS.GET_CONFIG',
   ADD_CONFIG = 'CONFIG_ACTIONS.ADD_CONFIG',
+  CREATE_CONFIG = 'CONFIG_ACTION.CREATE_CONFIG',
   DELETE_CONFIG = 'CONFIG_ACTIONS.DELETE_CONFIG',
   EDIT_CONFIG = 'CONFIG_ACTIONS.EDIT_CONFIG'
 }
 
 type getConfig = {
   type: typeof CONFIG_ACTIONS.GET_CONFIG
+}
+
+type createConfig = {
+  type: typeof CONFIG_ACTIONS.CREATE_CONFIG
 }
 
 type addConfig = {
@@ -31,4 +41,4 @@ type editConfig = {
 }
 
 export type ActionTypes =
-  | getConfig | addConfig | deleteConfig | editConfig
+  | getConfig | createConfig | deleteConfig | editConfig | addConfig

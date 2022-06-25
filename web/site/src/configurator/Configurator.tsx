@@ -7,6 +7,7 @@ import {RootState} from "../store/types";
 import {ConfigType} from "../store/Configurator/types";
 import React, {useEffect} from "react";
 import Gesture from "./component/Gesture";
+import Debug from "./component/Debug";
 
 export default function Configurator() {
   const dispatch = useDispatch()
@@ -14,12 +15,15 @@ export default function Configurator() {
 
   useEffect(() => {
     dispatch<any>(getConfig())
-  }, [configList])
+  }, [configList, dispatch])
 
   return (
     <MainContainer>
       <ConfigContainer>
-        <StyledViewport/>
+        <div>
+          <StyledViewport/>
+          <Debug/>
+        </div>
         <StyledEditor>
           {renderConfigs(configList)}
           {/*{console.log(configList)}*/}
@@ -38,7 +42,7 @@ function renderConfigs(configList: ConfigType[]) {
       {configList.map((config: ConfigType) => (
         <Gesture
           key={config.id}
-          name={config.name} />
+          name={config.name}/>
       ))}
     </React.Fragment>
   )

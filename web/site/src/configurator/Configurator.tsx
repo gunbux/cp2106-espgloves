@@ -8,6 +8,7 @@ import {ConfigType} from "../store/Configurator/types";
 import React, {useEffect} from "react";
 import Gesture from "./component/Gesture";
 import Debug from "./component/Debug";
+import State from "./component/State";
 
 export default function Configurator() {
   const dispatch = useDispatch()
@@ -27,6 +28,7 @@ export default function Configurator() {
         <StyledEditor>
           {renderConfigs(configList)}
           {/*{console.log(configList)}*/}
+          <State />
           <StyledButton variant="contained" size="large" onClick={() => dispatch<any>(createConfig())}>
             <AddIcon/>
           </StyledButton>

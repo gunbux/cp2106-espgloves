@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {HashRouter, Routes, Route} from "react-router-dom";
 import {Provider} from "react-redux";
 import {ThemeProvider} from "styled-components";
 import {nordTheme} from "./styles/Nordic";
@@ -11,11 +11,11 @@ import Navigation from "./common/components/Navigation";
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <ThemeProvider theme={nordTheme}>
           {renderApp()}
         </ThemeProvider>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 }
